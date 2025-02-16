@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Antonín Tomeček" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Antonín Tomeček - Portfolio</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="bootstrap.css" rel="stylesheet" />
+
+    <!-- FontAwesome Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="100">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#home">
+          <img src="ima2g/LOGO.png" alt="Logo" class="logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Domů</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">O mně</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#kontakt">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Sekce -->
+    <section id="home" class="hero-section">
+      <div class="container text-center">
+        <div class="hello-world">"HELLO WORLD"</div>
+        <div class="name-title">Ing. Antonín Tomeček</div>
+
+        <!-- Profilová fotka s odkazy na sociální sítě -->
+        <div class="profile-container">
+          <img src="ima2g/me.png" alt="Antonín Tomeček" class="profile-img" />
+          <div class="social-icons">
+            <a href="https://www.instagram.com/antonin_tomecek/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.facebook.com/antonin.tomecek/" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/antonin-tomecek/"
+              target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="https://github.com/atonin91cz" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="job-title">Junior Software Developer</div>
+        <div class="welcome-text">Vítej na mé stránce</div>
+      </div>
+    </section>
+
+    <!-- O mně Section -->
+    <section id="about" class="section bg-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Obrázek vlevo -->
+          <div class="col-lg-4 text-center">
+            <img
+              class="image-custom"
+              src="ima2g/ich.jpg"
+              alt="Profilová fotka"
+            />
+          </div>
+          <!-- Text uprostřed -->
+          <div class="col-lg-8 about-text text-start">
+            <p>
+              Ahoj! Pocházím z jižní Moravy, malebného městečka nedaleko
+              Strážnice v okrese Hodonín – kraje výborného vína, kouzelných
+              sklípků a pohostinných lidí. Jmenuji se Antonín a vystudoval jsem
+              automatizaci na <strong>VŠB-TU v Ostravě</strong>.
+            </p>
+            <p>
+              Fascinuje mě kreativita a hledání cest, jak propojit technické
+              znalosti s designem a estetikou.
+            </p>
+          </div>
+        </div>
+
+        <!-- Druhá část o mně -->
+        <div class="row align-items-center mt-5">
+          <!-- Text vlevo -->
+          <div class="col-lg-8 about-text text-start">
+            <p>
+              Rád cestuji po světě se svou přítelkyní, poznávám nová místa,
+              kultury a především sbírám nezapomenutelné zážitky. Svět IT mě
+              fascinoval už od dětství – rád se učím a aplikuji nové
+              technologie, které usnadňují každodenní život.
+            </p>
+            <p>
+              Ve volném čase se věnuji sportu, horské turistice nebo se
+              vzdělávám v oblastech, které mě nejvíce zajímají.
+            </p>
+          </div>
+          <!-- Obrázek vpravo -->
+          <div class="col-lg-4 text-center">
+            <img class="image-custom" src="ima2g/nojono.jpg" alt="Cestování" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekce Skills -->
+    <section id="skills" class="skills-section">
+      <div class="container">
+        <h2 class="text-center mb-5">Ski<span class="skillclass">lls</span></h2>
+        <div class="row justify-content-center">
+          <!-- Frontend -->
+          <div class="col-lg-4 col-md-6">
+            <div class="skill-card">
+              <h4><i class="fas fa-code"></i> Frontend</h4>
+              <ul>
+                <li><i class="fab fa-html5"></i> HTML5</li>
+                <li><i class="fab fa-css3-alt"></i> CSS3</li>
+                <li><i class="fab fa-js"></i> JavaScript</li>
+                <li><i class="fab fa-react"></i> React</li>
+                <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
+                <li><i class="fab fa-php"></i> PHP</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="col-lg-4 col-md-6">
+            <div class="skill-card">
+              <h4><i class="fas fa-server"></i> Backend</h4>
+              <ul>
+                <li><i class="fab fa-python"></i> Python</li>
+                <li><i class="fab fa-java"></i> Java</li>
+                <li><i class="fas fa-code"></i> C#</li>
+                <li><i class="fas fa-database"></i> .NET Core</li>
+                <li><i class="fas fa-code-branch"></i> Git</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Databáze -->
+          <div class="col-lg-4 col-md-6">
+            <div class="skill-card">
+              <h4><i class="fas fa-database"></i> Databáze</h4>
+              <ul>
+                <li><i class="fas fa-database"></i> MySQL</li>
+                <li><i class="fas fa-database"></i> PostgreSQL</li>
+                <li><i class="fas fa-database"></i> Oracle (PL/SQL)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center mt-3">
+          <!-- Pokročilé technologie -->
+          <div class="col-lg-6 col-md-6">
+            <div class="skill-card">
+              <h4><i class="fas fa-cogs"></i> Pokročilé technologie</h4>
+              <ul>
+                <li><i class="fas fa-project-diagram"></i> REST API</li>
+                <li><i class="fas fa-code"></i> WebAssembly</li>
+                <li><i class="fas fa-cogs"></i> GraphQL</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- DevOps -->
+          <div class="col-lg-6 col-md-6">
+            <div class="skill-card">
+              <h4><i class="fas fa-tools"></i> DevOps</h4>
+              <ul>
+                <li><i class="fab fa-docker"></i> Docker</li>
+                <li><i class="fab fa-windows"></i> Windows Server</li>
+                <li><i class="fab fa-linux"></i> Linux Administration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <div class="text-center mb-4">
+          <p class="portfolio-intro">
+            Jsem nadšený webový vývojář s vášní pro tvorbu moderních a
+            responzivních webových stránek. Rád se učím nové technologie a
+            zdokonaluji své dovednosti.
+          </p>
+        </div>
+        <h2 class="text-center portfolio-title">PORTFOLIO:</h2>
+        <div class="row gy-4">
+          <!-- Mezera mezi řádky -->
+
+          <!-- Projekt 1 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card small-card">
+              <div class="card-body">
+                <h5 class="project-label">Projekt 1</h5>
+                <h4 class="card-title">Objednávka</h4>
+              </div>
+              <img
+                src="ima2g/krmivo01.jpg"
+                class="card-img-top"
+                alt="Objednávka"
+              />
+              <div class="card-body">
+                <p class="card-text">Správa objednávání</p>
+                <a
+                  href="https://atonin91cz.github.io/objednavka/"
+                  class="btlink"
+                  >zde</a
+                >
+                <div class="tech-icons">
+                  <i class="fab fa-html5"></i>
+                  <i class="fab fa-css3-alt"></i>
+                  <i class="fab fa-js"></i>
+                  <i class="fab fa-bootstrap"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projekt 2 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card small-card">
+              <div class="card-body">
+                <h5 class="project-label">Projekt 2</h5>
+                <h4 class="card-title">Výstava</h4>
+              </div>
+              <img
+                src="ima2g/vystava01.jpg"
+                class="card-img-top"
+                alt="Výstava"
+              />
+              <div class="card-body">
+                <p class="card-text">Výstava obrazů, cvičení</p>
+                <a href="https://tomecek.vercel.app/" class="btlink">zde</a>
+                <div class="tech-icons">
+                  <i class="fab fa-html5"></i>
+                  <i class="fab fa-css3-alt"></i>
+                  <i class="fab fa-js"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projekt 3 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card small-card">
+              <div class="card-body">
+                <h5 class="project-label">Projekt 3</h5>
+                <h4 class="card-title">Měření rychlosti internetu</h4>
+              </div>
+              <img
+                src="ima2g/mereni01.jpg"
+                class="card-img-top"
+                alt="Měření rychlosti"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  Aplikace pro měření rychlosti připojení.
+                </p>
+                <a href="https://rychlostnetu.vercel.app/" class="btlink"
+                  >zde</a
+                >
+                <div class="tech-icons">
+                  <i class="fab fa-html5"></i>
+                  <i class="fab fa-css3-alt"></i>
+                  <i class="fab fa-js"></i>
+                  <i class="fab fa-bootstrap"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projekt 4 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card small-card">
+              <div class="card-body">
+                <h5 class="project-label">Projekt 4</h5>
+                <h4 class="card-title">Pokročilejší filtr obrázků</h4>
+              </div>
+              <img
+                src="ima2g/filtr01.jpg"
+                class="card-img-top"
+                alt="Filtr obrázků"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  Aplikace pro pokročilejší správu obrázků.
+                </p>
+                <a href="https://filtrap.vercel.app/" class="btlink">zde</a>
+                <div class="tech-icons">
+                  <i class="fab fa-html5"></i>
+                  <i class="fab fa-css3-alt"></i>
+                  <i class="fab fa-js"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projekt 5 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card small-card">
+              <div class="card-body">
+                <h5 class="project-label">Projekt 5</h5>
+                <h4 class="card-title">Gif animace maker</h4>
+              </div>
+              <img
+                src="ima2g/animace01.jpg"
+                class="card-img-top"
+                alt="GIF maker"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  Aplikace pro vytvoření jednoduché animace.
+                </p>
+                <a
+                  href="https://filtrap.vercel.app/animation.html"
+                  class="btlink"
+                  >zde</a
+                >
+                <div class="tech-icons">
+                  <i class="fab fa-html5"></i>
+                  <i class="fab fa-css3-alt"></i>
+                  <i class="fab fa-js"></i>
+                  <i class="fab fa-bootstrap"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prázdný projekt 6 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card small-card">
+              <div class="card-body">
+                <h5 class="project-label">Projekt 6</h5>
+                <h4 class="card-title">Brzy...</h4>
+              </div>
+              <img
+                src="ima2g/comingsoon.jpg"
+                class="card-img-top"
+                alt="Brzy..."
+              />
+              <div class="card-body">
+                <p class="card-text">Další projekt bude doplněn.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakt Sekce -->
+    <section id="kontakt" class="contact-section">
+      <div class="container">
+        <h2 class="text-center mb-4">Kontaktní formulář</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <div class="form-container">
+              <form id="contactForm">
+                <label for="jmeno">Jméno</label>
+                <input
+                  type="text"
+                  id="jmeno"
+                  name="jmeno"
+                  class="form-control"
+                  placeholder="Zadejte své jméno"
+                  required
+                />
+
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="Zadejte svůj email"
+                  required
+                />
+
+                <label for="zprava">Zpráva</label>
+                <textarea
+                  id="zprava"
+                  name="zprava"
+                  class="form-control"
+                  rows="4"
+                  placeholder="Zadejte svou zprávu..."
+                  required
+                ></textarea>
+
+                <button type="submit" class="btn btn-primary">Odeslat</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontaktní informace -->
+    <div class="container">
+      <section class="contact-info">
+        <h3>Kontaktní informace</h3>
+        <p><i class="fas fa-phone"></i> +420 735 982 438</p>
+        <p><i class="fas fa-envelope"></i> antonin91@seznam.cz</p>
+        <p>
+          <i class="fas fa-map-marker-alt"></i> Mlýnská 246, Sudoměřice 696 66
+        </p>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footers">
+      <div class="container">
+        <div class="social-iconss">
+          <a href="https://www.facebook.com/antonin.tomecek/" target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://www.instagram.com/antonin_tomecek/" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://x.com/" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+        </div>
+        <div class="copy">
+          &copy; 2024 Antonín Tomeček. Všechna práva vyhrazena.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap.js"></script>
+  </body>
+</html>

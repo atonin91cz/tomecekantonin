@@ -1,0 +1,584 @@
+/* Základní styly */
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+.about-text {
+  text-align: left;
+  padding-left: 20px; /* Přidá odsazení od levého okraje */
+  font-size: 18px;
+  line-height: 1.6;
+}
+.navbar {
+  background: linear-gradient(45deg, #0d9f89, #14b4dc, #8a2be2, #a3eb1d);
+}
+
+/* Logo */
+.logo {
+  width: 65px;
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.2);
+}
+
+/* Hero sekce */
+.hero-section {
+  height: 100vh;
+  background: url("ima2g/obrazpc.jpg") no-repeat center center/cover;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.profile-container {
+  position: relative;
+  display: inline-block;
+}
+
+.social-icons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Sekce */
+.section {
+  padding: 80px 0;
+}
+
+/* O mně obrázek */
+.image-custom {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-custom:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer */
+.footer {
+  background: #212529;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+.footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+.footer .social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+.footer .social-icons a:hover {
+  color: #0ce5b2;
+}
+.footer .copy {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+/* O mně sekce */
+.about-text {
+  font-family: "Caveat", cursive;
+  font-size: 24px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Obrázky */
+.image-custom {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-custom:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}
+/* Portfolio úvodní text */
+.portfolio-intro {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  font-style: italic;
+}
+
+/* Název Portfolio */
+.portfolio-title {
+  font-family: "Delicious Handrawn";
+  font-size: 40px;
+  color: rgb(54, 18, 87);
+}
+
+/* Karty projektů */
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #1e1e1e;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgb(177, 65, 65);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(177, 65, 65, 0.6);
+}
+
+.project-label {
+  font-family: "Caveat", cursive;
+  font-size: 24px;
+  color: rgb(54, 18, 87);
+  text-align: center;
+}
+
+/* Zvýraznění názvu projektu */
+.card-title {
+  font-family: "Lilita One", sans-serif;
+  color: blueviolet;
+  text-align: center;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  font-weight: bold;
+  color: lightgray;
+}
+
+.card-img-top {
+  height: 180px; /* Menší výška obrázků */
+  object-fit: cover;
+  border-radius: 8px;
+}
+.row.gy-5 {
+  gap: 40px;
+}
+/* Technologie pod tlačítkem */
+.tech-icons {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.tech-icons i {
+  margin: 5px;
+  color: #f0db4f; /* Barva ikony */
+}
+
+.tech-icons i.fa-html5 {
+  color: #e34f26;
+}
+.tech-icons i.fa-css3-alt {
+  color: #264de4;
+}
+.tech-icons i.fa-js {
+  color: #f7df1e;
+}
+.tech-icons i.fa-bootstrap {
+  color: #563d7c;
+}
+
+/* Odkaz na projekt */
+.btlink {
+  background-color: rgb(16, 54, 150);
+  color: white;
+  border-radius: 6px;
+  padding: 10px 20px;
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.btlink:hover {
+  background-color: rgb(10, 40, 120);
+}
+/* Menší karty */
+/* Sekce kontakt */
+.contact-section {
+  padding: 60px 0;
+  scroll-margin-top: 100px; /* Aby se správně zobrazil při kliknutí na navigaci */
+}
+
+.form-container {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 10px;
+  color: white;
+}
+
+.form-container label {
+  color: white;
+  font-weight: bold;
+}
+
+.form-container .form-control {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.form-container button {
+  background: #0ce5b2;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-container button:hover {
+  background: #0aa888;
+  transform: scale(1.05);
+}
+
+/* Kontaktní informace */
+.contact-info {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.contact-info h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: #0ce5b2;
+}
+/* Sekce Skills */
+.skills-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+/* Nadpis */
+.skills-section h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* Kontejner pro stejné výšky karet */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Styl karet */
+.skill-card {
+  background: #1e1e1e;
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%; /* Důležité pro stejnou výšku */
+}
+
+/* Hover efekt */
+.skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Nadpisy karet */
+.skill-card h4 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #0ce5b2;
+}
+
+/* Seznam technologií */
+.skill-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Položky v seznamu */
+.skill-card ul li {
+  font-size: 18px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Ikony */
+.skill-card ul li i {
+  font-size: 22px;
+  color: #0ce5b2;
+}
+
+/* Responsivita */
+@media (max-width: 768px) {
+  .row {
+    display: block;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+/* ✅ Hero sekce */
+.hero-section {
+  height: 100vh;
+  background: url("ima2g/obrazpc.jpg") no-repeat center center/cover;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✅ Animace vstupního textu */
+.welcome-text {
+  font-size: 2rem;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.welcome-text.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ✅ "Hello World" styl */
+.hello-world {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2.5rem;
+  background: white;
+  color: black;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: inline-block;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* ✅ Styl pro jméno */
+.name-title {
+  font-size: 2.2rem;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: transform 0.3s ease-in-out;
+}
+
+.name-title:hover {
+  transform: scale(1.1);
+}
+
+/* ✅ Profilová fotka */
+.profile-img {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  border: 6px solid white;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out;
+}
+.profile-container:hover .profile-img {
+  transform: scale(1.4);
+}
+
+.profile-container:hover .social-icons {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.social-icons a {
+  position: absolute;
+  font-size: 40px;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+  text-decoration: none;
+  border: none;
+}
+
+.social-icons a:nth-child(1) {
+  top: -90px;
+  left: 30%; /* Posunuto doleva */
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom, #ff7b5c, #e4405f); /* Instagram */
+}
+
+.social-icons a:nth-child(2) {
+  top: 50%;
+  left: -60px; /* Posunuto doleva */
+  transform: translateY(-50%);
+  background: #1877f2; /* Facebook */
+}
+
+.social-icons a:nth-child(3) {
+  top: 50%;
+  right: -120px; /* Posunuto více doprava, aby se vyvážilo */
+  transform: translateY(-50%);
+  background: #0a66c2; /* LinkedIn */
+}
+
+.social-icons a:nth-child(4) {
+  bottom: -90px;
+  left: 30%; /* Posunuto doleva */
+  transform: translateX(-50%);
+  background: #333; /* GitHub */
+}
+
+.social-icons a:nth-child(1) {
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom, #ff7b5c, #e4405f); /* Instagram */
+}
+.social-icons a:nth-child(2) {
+  top: 50%;
+  left: -90px;
+  transform: translateY(-50%);
+  background: #1877f2; /* Facebook */
+}
+
+.social-icons a:nth-child(3) {
+  top: 50%;
+  right: -90px;
+  transform: translateY(-50%);
+  background: #0a66c2; /* LinkedIn */
+}
+.social-icons a:nth-child(4) {
+  bottom: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333; /* GitHub */
+}
+
+.social-icons a:hover {
+  transform: scale(1.3);
+  background: white;
+  color: black;
+}
+.profile-img:hover {
+  transform: scale(1.15);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ✅ Junior Software Developer text */
+.job-title {
+  font-size: 1.5rem;
+  background: white;
+  color: black;
+  padding: 5px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  display: inline-block;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* ✅ Keyframes pro efekt fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.skillclass {
+  color: rgb(11, 225, 132);
+  background-color: #1e1e1e;
+}
+
+/* Footer */
+.footers {
+  background: #212529;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+.footers .social-iconss {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+.footers .social-iconss a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+.footers .social-iconss a:hover {
+  color: #0ce5b2;
+}
+.footers .copy {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
