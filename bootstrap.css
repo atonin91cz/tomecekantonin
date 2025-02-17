@@ -3,7 +3,12 @@ body {
   font-family: Arial, sans-serif;
   overflow-x: hidden;
 }
-
+.about-text {
+  text-align: left;
+  padding-left: 20px; /* Přidá odsazení od levého okraje */
+  font-size: 18px;
+  line-height: 1.6;
+}
 .navbar {
   background: linear-gradient(45deg, #0d9f89, #14b4dc, #8a2be2, #a3eb1d);
 }
@@ -94,25 +99,13 @@ body {
   margin-top: 10px;
   font-size: 0.9rem;
 }
+/* O mně sekce */
 .about-text {
-  font-family: "Caveat", cursive, Arial, sans-serif; /* Prioritní font + fallback */
-  text-align: left;
-  padding-left: 20px; /* Odsazení */
-  font-size: 35px; /* Lepší čitelnost */
-  color: #333; /* Neutrální barva */
-  line-height: 1.7; /* Lepší řádkování */
+  font-family: "Caveat", cursive;
+  font-size: 24px;
+  color: #333;
+  line-height: 1.6;
 }
-
-/* ✅ Responzivní úprava pro mobily */
-@media (max-width: 768px) {
-  .about-text {
-    font-size: 20px; /* Větší text na mobilu */
-    line-height: 1.6;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-
 
 /* Obrázky */
 .image-custom {
