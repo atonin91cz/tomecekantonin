@@ -4,6 +4,7 @@ body {
   overflow-x: hidden;
 }
 .about-text {
+  font-family: "Caveat", cursive, Arial, sans-serif;
   text-align: left;
   padding-left: 20px; /* Přidá odsazení od levého okraje */
   font-size: 18px;
