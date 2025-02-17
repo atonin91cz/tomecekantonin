@@ -3,12 +3,6 @@ body {
   font-family: Arial, sans-serif;
   overflow-x: hidden;
 }
-.about-text {
-  font-family: "Caveat", cursive;
-  font-size: 24px;
-  color: #333;
-  line-height: 1.6;
-}
 
 .navbar {
   background: linear-gradient(45deg, #0d9f89, #14b4dc, #8a2be2, #a3eb1d);
@@ -100,7 +94,13 @@ body {
   margin-top: 10px;
   font-size: 0.9rem;
 }
-
+/* O mně sekce */
+.about-text {
+  font-family: "Caveat", cursive;
+  font-size: 24px;
+  color: #333;
+  line-height: 1.6;
+}
 
 /* Obrázky */
 .image-custom {
