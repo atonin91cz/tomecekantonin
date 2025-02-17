@@ -4,22 +4,10 @@ body {
   overflow-x: hidden;
 }
 .about-text {
-  font-family: "Caveat", cursive, Arial, sans-serif; /* Prioritní font + fallback */
-  text-align: left;
-  padding-left: 20px; /* Odsazení */
-  font-size: 22px; /* Lepší čitelnost */
-  color: #333; /* Neutrální barva */
-  line-height: 1.7; /* Lepší řádkování */
-}
-
-/* ✅ Responzivní úprava pro mobily */
-@media (max-width: 768px) {
-  .about-text {
-    font-size: 20px; /* Větší text na mobilu */
-    line-height: 1.6;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+  font-family: "Caveat", cursive;
+  font-size: 24px;
+  color: #333;
+  line-height: 1.6;
 }
 
 .navbar {
