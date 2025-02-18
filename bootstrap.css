@@ -1,19 +1,12 @@
-/* Základní styly */
 body {
   font-family: Arial, sans-serif;
   overflow-x: hidden;
 }
-.about-text {
-  text-align: left;
-  padding-left: 20px; /* Přidá odsazení od levého okraje */
-  font-size: 18px;
-  line-height: 1.6;
-}
+
 .navbar {
   background: linear-gradient(45deg, #0d9f89, #14b4dc, #8a2be2, #a3eb1d);
 }
 
-/* Logo */
 .logo {
   width: 65px;
   transition: transform 0.3s;
@@ -23,6 +16,9 @@ body {
   transform: scale(1.2);
 }
 
+html {
+  scroll-behavior: smooth;
+}
 /* Hero sekce */
 .hero-section {
   height: 100vh;
@@ -55,6 +51,79 @@ body {
   transition: opacity 0.3s ease-in-out;
 }
 
+.profile-container:hover .social-icons {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.social-icons a {
+  position: absolute;
+  font-size: 40px;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+  text-decoration: none;
+  border: none;
+}
+
+.social-icons a:nth-child(1) {
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom, #ff7b5c, #e4405f); /* Instagram */
+  margin-top: 10px;
+}
+.social-icons a:nth-child(2) {
+  top: 50%;
+  left: -90px;
+  transform: translateY(-50%);
+  background: #1877f2; /* Facebook */
+}
+
+.social-icons a:nth-child(3) {
+  top: 50%;
+  right: -90px;
+  transform: translateY(-50%);
+  background: #0a66c2; /* LinkedIn */
+}
+.social-icons a:nth-child(4) {
+  bottom: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333; /* GitHub */
+  margin-top: 10px;
+}
+
+.social-icons a:hover {
+  transform: scale(1.3);
+  background: white;
+  color: black;
+}
+
+.profile-img {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  border: 6px solid white;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out;
+  object-fit: cover;
+}
+.profile-container:hover .profile-img {
+  transform: scale(1.15);
+}
+
+.profile-img:hover {
+  transform: scale(1.15);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
 /* Sekce */
 .section {
   padding: 80px 0;
@@ -74,53 +143,50 @@ body {
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Footer */
-.footer {
-  background: #212529;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
-}
-.footer .social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 10px;
-}
-.footer .social-icons a {
-  color: white;
-  font-size: 1.5rem;
-  transition: color 0.3s;
-}
-.footer .social-icons a:hover {
-  color: #0ce5b2;
-}
-.footer .copy {
-  margin-top: 10px;
-  font-size: 0.9rem;
-}
-/* O mně sekce */
 .about-text {
   font-family: "Caveat", cursive;
   font-size: 24px;
   color: #333;
   line-height: 1.6;
+  text-align: left;
 }
 
-/* Obrázky */
-.image-custom {
-  max-width: 100%;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
+/* Footer */
+.footer,
+.footers {
+  background: #212529;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
 }
 
-.image-custom:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+.footer .social-icons,
+.footers .social-iconss {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
 }
-/* Portfolio úvodní text */
+
+.footer .social-icons a,
+.footers .social-iconss a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.footer .social-icons a:hover,
+.footers .social-iconss a:hover {
+  color: #0ce5b2;
+}
+
+.footer .copy,
+.footers .copy {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Portfolio */
 .portfolio-intro {
   font-size: 1.5rem;
   max-width: 800px;
@@ -132,7 +198,6 @@ body {
   font-style: italic;
 }
 
-/* Název Portfolio */
 .portfolio-title {
   font-family: "Delicious Handrawn";
   font-size: 40px;
@@ -140,8 +205,9 @@ body {
 }
 
 /* Karty projektů */
-.card {
-  height: 100%;
+.card,
+.small-card {
+  height: 550px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -154,7 +220,8 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
+.card:hover,
+.small-card:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(177, 65, 65, 0.6);
 }
@@ -166,28 +233,27 @@ body {
   text-align: center;
 }
 
-/* Zvýraznění názvu projektu */
 .card-title {
   font-family: "Lilita One", sans-serif;
   color: blueviolet;
   text-align: center;
 }
 
-.card-subtitle {
-  font-size: 14px;
-  font-weight: bold;
-  color: lightgray;
-}
-
 .card-img-top {
-  height: 180px; /* Menší výška obrázků */
+  height: 180px;
+  width: 100%;
   object-fit: cover;
   border-radius: 8px;
 }
-.row.gy-5 {
-  gap: 40px;
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  flex-grow: 1;
 }
-/* Technologie pod tlačítkem */
+
 .tech-icons {
   margin-top: 10px;
   font-size: 20px;
@@ -195,23 +261,25 @@ body {
 
 .tech-icons i {
   margin: 5px;
-  color: #f0db4f; /* Barva ikony */
+  color: #f0db4f;
 }
 
 .tech-icons i.fa-html5 {
   color: #e34f26;
 }
+
 .tech-icons i.fa-css3-alt {
   color: #264de4;
 }
+
 .tech-icons i.fa-js {
   color: #f7df1e;
 }
+
 .tech-icons i.fa-bootstrap {
   color: #563d7c;
 }
 
-/* Odkaz na projekt */
 .btlink {
   background-color: rgb(16, 54, 150);
   color: white;
@@ -220,16 +288,17 @@ body {
   display: inline-block;
   margin-top: 10px;
   text-decoration: none;
+  text-align: center;
 }
 
 .btlink:hover {
   background-color: rgb(10, 40, 120);
 }
-/* Menší karty */
-/* Sekce kontakt */
+
+/* Kontaktní sekce */
 .contact-section {
   padding: 60px 0;
-  scroll-margin-top: 100px; /* Aby se správně zobrazil při kliknutí na navigaci */
+  scroll-margin-top: 100px;
 }
 
 .form-container {
@@ -267,7 +336,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Kontaktní informace */
 .contact-info {
   background: rgba(0, 0, 0, 0.6);
   padding: 20px;
@@ -295,29 +363,14 @@ body {
   margin-right: 10px;
   color: #0ce5b2;
 }
-/* Sekce Skills */
+
+/* Skills sekce */
 .skills-section {
   padding: 80px 0;
   background: #f8f9fa;
   text-align: center;
 }
 
-/* Nadpis */
-.skills-section h2 {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-}
-
-/* Kontejner pro stejné výšky karet */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* Styl karet */
 .skill-card {
   background: #1e1e1e;
   color: white;
@@ -329,29 +382,25 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%; /* Důležité pro stejnou výšku */
+  height: 100%;
 }
 
-/* Hover efekt */
 .skill-card:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* Nadpisy karet */
 .skill-card h4 {
   font-size: 22px;
   margin-bottom: 15px;
   color: #0ce5b2;
 }
 
-/* Seznam technologií */
 .skill-card ul {
   list-style: none;
   padding: 0;
 }
 
-/* Položky v seznamu */
 .skill-card ul li {
   font-size: 18px;
   margin: 10px 0;
@@ -361,38 +410,25 @@ body {
   gap: 10px;
 }
 
-/* Ikony */
 .skill-card ul li i {
   font-size: 22px;
   color: #0ce5b2;
 }
 
-/* Responsivita */
-@media (max-width: 768px) {
-  .row {
-    display: block;
+/* Animace */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-html {
-  scroll-behavior: smooth;
-}
-/* ✅ Hero sekce */
-.hero-section {
-  height: 100vh;
-  background: url("ima2g/obrazpc.jpg") no-repeat center center/cover;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-}
 
-/* ✅ Animace vstupního textu */
 .welcome-text {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   opacity: 0;
   transform: translateY(20px);
@@ -404,7 +440,6 @@ html {
   transform: translateY(0);
 }
 
-/* ✅ "Hello World" styl */
 .hello-world {
   font-family: "Courier New", Courier, monospace;
   font-size: 2.5rem;
@@ -417,7 +452,6 @@ html {
   animation: fadeIn 2s ease-in-out;
 }
 
-/* ✅ Styl pro jméno */
 .name-title {
   font-size: 2.2rem;
   background: rgba(0, 0, 0, 0.7);
@@ -431,105 +465,6 @@ html {
   transform: scale(1.1);
 }
 
-/* ✅ Profilová fotka */
-.profile-img {
-  width: 230px;
-  height: 230px;
-  border-radius: 50%;
-  border: 6px solid white;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease-in-out;
-}
-.profile-container:hover .profile-img {
-  transform: scale(1.4);
-}
-
-.profile-container:hover .social-icons {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.social-icons a {
-  position: absolute;
-  font-size: 40px;
-  color: white;
-  background: rgba(0, 0, 0, 0.8);
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
-  text-decoration: none;
-  border: none;
-}
-
-.social-icons a:nth-child(1) {
-  top: -90px;
-  left: 30%; /* Posunuto doleva */
-  transform: translateX(-50%);
-  background: linear-gradient(to bottom, #ff7b5c, #e4405f); /* Instagram */
-}
-
-.social-icons a:nth-child(2) {
-  top: 50%;
-  left: -60px; /* Posunuto doleva */
-  transform: translateY(-50%);
-  background: #1877f2; /* Facebook */
-}
-
-.social-icons a:nth-child(3) {
-  top: 50%;
-  right: -120px; /* Posunuto více doprava, aby se vyvážilo */
-  transform: translateY(-50%);
-  background: #0a66c2; /* LinkedIn */
-}
-
-.social-icons a:nth-child(4) {
-  bottom: -90px;
-  left: 30%; /* Posunuto doleva */
-  transform: translateX(-50%);
-  background: #333; /* GitHub */
-}
-
-.social-icons a:nth-child(1) {
-  top: -90px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(to bottom, #ff7b5c, #e4405f); /* Instagram */
-}
-.social-icons a:nth-child(2) {
-  top: 50%;
-  left: -90px;
-  transform: translateY(-50%);
-  background: #1877f2; /* Facebook */
-}
-
-.social-icons a:nth-child(3) {
-  top: 50%;
-  right: -90px;
-  transform: translateY(-50%);
-  background: #0a66c2; /* LinkedIn */
-}
-.social-icons a:nth-child(4) {
-  bottom: -90px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #333; /* GitHub */
-}
-
-.social-icons a:hover {
-  transform: scale(1.3);
-  background: white;
-  color: black;
-}
-.profile-img:hover {
-  transform: scale(1.15);
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-/* ✅ Junior Software Developer text */
 .job-title {
   font-size: 1.5rem;
   background: white;
@@ -541,44 +476,164 @@ html {
   animation: fadeIn 2s ease-in-out;
 }
 
-/* ✅ Keyframes pro efekt fade-in */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 .skillclass {
   color: rgb(11, 225, 132);
   background-color: #1e1e1e;
+  padding: 10px 20px;
+  border-radius: 8px;
 }
 
-/* Footer */
-.footers {
-  background: #212529;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
+.card-text {
+  font-style: italic;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
-.footers .social-iconss {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 10px;
+
+/* Mobilní verze */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 60px; /* Přidáno pro lepší odsazení od navigace */
+  }
+  .row {
+    display: block;
+  }
+
+  .hello-world {
+    font-size: 2rem; /* Zmenšení velikosti textu */
+    margin-bottom: 5px; /* Menší mezera pod textem */
+  }
+
+  .job-title {
+    font-size: 1.2rem; /* Zmenšení velikosti textu */
+    margin-top: 10px; /* Menší mezera nad textem */
+  }
+
+  .profile-container {
+    margin-top: 20px; /* Posunutí obrázku dolů */
+  }
+
+  .social-icons {
+    top: 50%; /* Centrování ikon */
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .social-icons a {
+    font-size: 30px; /* Zmenšení ikon */
+    width: 50px;
+    height: 50px;
+  }
+
+  .social-icons a:nth-child(1) {
+    top: -70px; /* Upraveno pro menší obrazovky */
+  }
+
+  .social-icons a:nth-child(2) {
+    left: -70px; /* Upraveno pro menší obrazovky */
+  }
+
+  .social-icons a:nth-child(3) {
+    right: -70px; /* Upraveno pro menší obrazovky */
+  }
+
+  .social-icons a:nth-child(4) {
+    bottom: -70px; /* Upraveno pro menší obrazovky */
+  }
 }
-.footers .social-iconss a {
-  color: white;
-  font-size: 1.5rem;
-  transition: color 0.3s;
+
+/* Desktopová verze */
+@media (min-width: 769px) {
+  .profile-container {
+    position: absolute;
+    top: 22%;
+    left: 27%;
+    /* Posunutí obrázku více doleva */
+  }
+
+  .job-title {
+    margin-top: 20px; /* Větší mezera nad textem */
+  }
+
+  .social-icons a {
+    font-size: 40px; /* Vrátíme původní velikost ikon */
+    width: 60px;
+    height: 60px;
+  }
+
+  .social-icons a:nth-child(1) {
+    top: -90px; /* Vrátíme původní pozici */
+  }
+
+  .social-icons a:nth-child(2) {
+    left: -90px; /* Vrátíme původní pozici */
+  }
+
+  .social-icons a:nth-child(3) {
+    right: -90px; /* Vrátíme původní pozici */
+  }
+
+  .social-icons a:nth-child(4) {
+    bottom: -90px; /* Vrátíme původní pozici */
+  }
+  .hello-world {
+    position: absolute;
+    top: 18%;
+    left: 37%;
+  }
+  .welcome-text {
+    position: absolute;
+    top: 75%;
+    left: 40%;
+    transform: translateX(-50%);
+  }
 }
-.footers .social-iconss a:hover {
-  color: #0ce5b2;
+
+/* Úprava pro desktop */
+@media (min-width: 769px) {
+  .hero-section {
+    padding-top: 100px; /* Větší odsazení od navigace */
+  }
+
+  .profile-container {
+    margin-left: -50px; /* Posunutí obrázku více doleva */
+  }
+
+  .job-title {
+    margin-top: 20px; /* Větší mezera nad textem */
+  }
 }
-.footers .copy {
-  margin-top: 10px;
-  font-size: 0.9rem;
+@media (max-width: 768px) {
+  .profile-container {
+    margin-top: 20px; /* Posune obrázek dolů */
+  }
+  .hello-world {
+    position: absolute;
+    top: 10%;
+    left: 18%;
+  }
+
+  .name-title {
+    position: absolute;
+    top: 20%;
+    left: 8%;
+  }
+
+  .profile-container {
+    position: absolute;
+    bottom: 48%;
+    left: 25%;
+  }
+  .job-title {
+    position: absolute;
+    bottom: 37%;
+    left: 8%;
+  }
+
+  .welcome-text {
+    position: absolute;
+    top: 65%;
+  }
 }
