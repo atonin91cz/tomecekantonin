@@ -20,26 +20,6 @@ window.addEventListener("scroll", function () {
     navbar.classList.remove("bg-dark");
   }
 });
-// Animace zobrazení projektů
-document.addEventListener("DOMContentLoaded", function () {
-  ScrollReveal().reveal(".card", {
-    delay: 200,
-    distance: "50px",
-    origin: "bottom",
-    interval: 100,
-    easing: "ease-in-out",
-  });
-});
-
-// // Plynulý scroll pro navigaci
-// document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-//   anchor.addEventListener("click", function (e) {
-//     e.preventDefault();
-//     document.querySelector(this.getAttribute("href")).scrollIntoView({
-//       behavior: "smooth",
-//     });
-//   });
-// });
 
 // Plynulý scroll na sekci kontakt při kliknutí na navigaci
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -86,6 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }, index * 200);
   });
 });
+
+// Aktivace navigačních odkazů při scrollování
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
@@ -118,8 +100,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 1000);
 });
 
-//__//
+// Zavření navigace po kliknutí na odkaz (pro mobilní verzi)
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+  const navbarToggler = document.querySelector(".navbar-toggler");
+  const navbarCollapse = document.querySelector(".navbar-collapse");
 
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (navbarCollapse.classList.contains("show")) {
+        // Zavře navigaci pomocí Bootstrap metody
+        new bootstrap.Collapse(navbarCollapse).hide();
+      }
+    });
+  });
+});
+
+// Efekt pro sociální ikonky
 document.addEventListener("DOMContentLoaded", function () {
   const profileContainer = document.querySelector(".profile-container");
   const socialIcons = document.querySelector(".social-icons");
