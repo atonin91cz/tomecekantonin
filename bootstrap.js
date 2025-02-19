@@ -93,7 +93,6 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", changeActiveNav);
 });
 
-// ✅ Animace "Vítej na mé stránce"
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => {
     document.querySelector(".welcome-text").classList.add("show");
@@ -127,14 +126,13 @@ document.addEventListener("DOMContentLoaded", function () {
     socialIcons.style.opacity = "1";
     socialIcons.style.pointerEvents = "auto";
 
-    // Zastavíme předchozí timeout, aby ikonky zůstaly viditelné
     clearTimeout(timeout);
   });
 
   profileContainer.addEventListener("mouseleave", function () {
     timeout = setTimeout(() => {
       socialIcons.style.opacity = "0";
-      socialIcons.style.pointerEvents = "none"; // Oprava bugu – ikony už nezůstávají "viset"
-    }, 3000);
+      socialIcons.style.pointerEvents = "none"; 
+    }, 1000);
   });
 });
