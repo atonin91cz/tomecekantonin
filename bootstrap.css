@@ -3,34 +3,6 @@ body {
   overflow-x: hidden;
 }
 
-@font-face {
-  font-family: "Caveat";
-  src: url("fonts/Caveat-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Caveat";
-  src: url("fonts/Caveat-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Caveat";
-  src: url("fonts/Caveat-Italic.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Caveat";
-  src: url("fonts/Caveat-BoldItalic.ttf") format("truetype");
-  font-weight: bold;
-  font-style: italic;
-}
-
 .navbar {
   background: linear-gradient(45deg, #0d9f89, #14b4dc, #8a2be2, #a3eb1d);
 }
