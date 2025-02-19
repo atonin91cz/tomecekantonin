@@ -50,7 +50,7 @@ html {
 /* Hero sekce */
 .hero-section {
   height: 100vh;
-  background: url("ima2g/obrazpc.jpg") no-repeat center center/cover;
+  background: url("ima2g/obrazpc2.jpg") no-repeat center center/cover;
   color: white;
   display: flex;
   align-items: center;
@@ -67,8 +67,8 @@ html {
 
 .social-icons {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 50%;
   top: 0;
   left: 0;
   display: flex;
@@ -77,6 +77,9 @@ html {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+  top: 50%; /* Centrování ikon */
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .profile-container:hover .social-icons {
@@ -128,6 +131,24 @@ html {
   margin-top: 10px;
 }
 
+.git-icon {
+  background-color: #333; /* Barva pozadí pro Git ikonku */
+  color: white;
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 40px; /* Pevná šířka ikonky */
+  height: 40px; /* Pevná výška ikonky */
+  transition: background-color 0.3s ease;
+}
+
+.git-icon:hover {
+  background-color: #555; /* Změna barvy při najetí myší */
+}
+
 .social-icons a:hover {
   transform: scale(1.3);
   background: white;
@@ -135,8 +156,8 @@ html {
 }
 
 .profile-img {
-  width: 230px;
-  height: 230px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   border: 6px solid white;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
@@ -235,7 +256,7 @@ html {
 /* Karty projektů */
 .card,
 .small-card {
-  height: 550px;
+  height: 650px; /* Pevná výška karty */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -246,6 +267,7 @@ html {
   padding: 15px;
   box-shadow: 0 4px 8px rgb(177, 65, 65);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
 }
 
 .card:hover,
@@ -257,7 +279,7 @@ html {
 .project-label {
   font-family: "Caveat", cursive;
   font-size: 24px;
-  color: rgb(54, 18, 87);
+  color: rgb(171, 95, 243);
   text-align: center;
 }
 
@@ -268,23 +290,32 @@ html {
 }
 
 .card-img-top {
-  height: 180px;
+  height: 180px; /* Pevná výška obrázku */
   width: 100%;
   object-fit: cover;
   border-radius: 8px;
+  margin-bottom: 25px;
 }
 
 .card-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 15px;
   flex-grow: 1;
 }
-
 .tech-icons {
   margin-top: 10px;
   font-size: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+/* Styly pro neaktivní Git ikonku */
+.git-icon.disabled {
+  pointer-events: none; /* Zakáže klikání */
+  opacity: 0.5; /* Ztlumí ikonku */
+  background-color: #888; /* Šedivé pozadí */
+  cursor: not-allowed; /* Kurzor "zakázáno" */
 }
 
 .tech-icons i {
@@ -314,11 +345,11 @@ html {
   border-radius: 6px;
   padding: 10px 20px;
   display: inline-block;
-  margin-top: 10px;
   text-decoration: none;
   text-align: center;
+  width: auto; /* Šířka se přizpůsobí obsahu */
+  flex: 1; /* Tlačítko zabírá dostupný prostor */
 }
-
 .btlink:hover {
   background-color: rgb(10, 40, 120);
 }
@@ -347,6 +378,20 @@ html {
   border: none;
   margin-bottom: 15px;
   padding: 10px;
+}
+.button-icons-container {
+  margin-top: auto; /* Zarovnání tlačítka a ikonek dole */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.button-git-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Mezera mezi tlačítkem a Git ikonkou */
+  justify-content: center; /* Zarovnání na střed */
 }
 
 .form-container button {
@@ -480,19 +525,6 @@ html {
   animation: fadeIn 2s ease-in-out;
 }
 
-.name-title {
-  font-size: 2.2rem;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: transform 0.3s ease-in-out;
-}
-
-.name-title:hover {
-  transform: scale(1.1);
-}
-
 .job-title {
   font-size: 1.5rem;
   background: white;
@@ -516,79 +548,161 @@ html {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  /* -webkit-line-clamp: 4; */
   -webkit-box-orient: vertical;
 }
 
-/* Mobilní verze */
+/* Mobilní verze ________________________mobil*/
 @media (max-width: 768px) {
   .hero-section {
-    padding-top: 60px; /* Přidáno pro lepší odsazení od navigace */
+    padding-top: 60px;
   }
   .row {
     display: block;
   }
 
   .hello-world {
-    font-size: 2rem; /* Zmenšení velikosti textu */
-    margin-bottom: 5px; /* Menší mezera pod textem */
+    font-size: 2rem;
+    position: absolute;
+    top: 10%;
+    left: 19%;
   }
 
   .job-title {
-    font-size: 1.2rem; /* Zmenšení velikosti textu */
-    margin-top: 10px; /* Menší mezera nad textem */
+    font-size: 1.2rem;
+    position: absolute;
+    top: 26%;
+    left: 20%;
+  }
+
+  .name-title {
+    position: absolute;
+
+    top: 17%;
+    font-size: 28px;
+    left: 48%;
+    transform: translateX(-50%);
+
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    width: 50%;
+    margin-bottom: 20px;
   }
 
   .profile-container {
-    margin-top: 20px; /* Posunutí obrázku dolů */
+    position: absolute;
+    top: 32%;
+    left: 29%;
+  }
+
+  .welcome-text {
+    position: absolute;
+    top: 52%;
+    left: 12%;
+    transform: translateX(-50%);
   }
 
   .social-icons {
-    top: 50%; /* Centrování ikon */
+    position: absolute;
+    width: 65%;
+    height: 72%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
   .social-icons a {
-    font-size: 30px; /* Zmenšení ikon */
+    font-size: 30px;
     width: 50px;
     height: 50px;
   }
 
   .social-icons a:nth-child(1) {
-    top: -70px; /* Upraveno pro menší obrazovky */
+    top: -70px;
   }
 
   .social-icons a:nth-child(2) {
-    left: -70px; /* Upraveno pro menší obrazovky */
+    left: -70px;
   }
 
   .social-icons a:nth-child(3) {
-    right: -70px; /* Upraveno pro menší obrazovky */
+    right: -70px;
   }
 
   .social-icons a:nth-child(4) {
-    bottom: -70px; /* Upraveno pro menší obrazovky */
+    bottom: -70px;
   }
 }
 
-/* Desktopová verze */
+/* Desktopová verze _______________________POČÍTAČ !!!*/
 @media (min-width: 769px) {
   .profile-container {
     position: absolute;
-    top: 22%;
-    left: 27%;
-    /* Posunutí obrázku více doleva */
+    top: 31%;
+    left: 20%;
+  }
+
+  .name-title {
+    font-size: 2.2rem;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+    width: 50%;
+    position: relative;
+    left: 30%;
+  }
+
+  .name-title:hover {
+    transform: scale(1.1);
+  }
+
+  .profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 6px solid white;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease-in-out;
+    object-fit: cover;
+  }
+
+  .social-icons a {
+    font-size: 30px; /* Zmenšení ikon */
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-icons {
+    position: absolute;
+    width: 40%;
+    height: 50%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    top: 50%; /* Centrování ikon */
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .job-title {
     margin-top: 20px; /* Větší mezera nad textem */
-  }
-
-  .social-icons a {
-    font-size: 40px; /* Vrátíme původní velikost ikon */
-    width: 60px;
-    height: 60px;
   }
 
   .social-icons a:nth-child(1) {
@@ -617,51 +731,8 @@ html {
     left: 40%;
     transform: translateX(-50%);
   }
-}
 
-/* Úprava pro desktop */
-@media (min-width: 769px) {
   .hero-section {
     padding-top: 100px; /* Větší odsazení od navigace */
-  }
-
-  .profile-container {
-    margin-left: -50px; /* Posunutí obrázku více doleva */
-  }
-
-  .job-title {
-    margin-top: 20px; /* Větší mezera nad textem */
-  }
-}
-@media (max-width: 768px) {
-  .profile-container {
-    margin-top: 20px; /* Posune obrázek dolů */
-  }
-  .hello-world {
-    position: absolute;
-    top: 10%;
-    left: 18%;
-  }
-
-  .name-title {
-    position: absolute;
-    top: 20%;
-    left: 8%;
-  }
-
-  .profile-container {
-    position: absolute;
-    bottom: 48%;
-    left: 25%;
-  }
-  .job-title {
-    position: absolute;
-    bottom: 37%;
-    left: 8%;
-  }
-
-  .welcome-text {
-    position: absolute;
-    top: 65%;
   }
 }
