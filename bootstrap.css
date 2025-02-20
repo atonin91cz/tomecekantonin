@@ -1,4 +1,6 @@
-/* Základní styly */
+/* ==================== */
+/* Obecné styly */
+/* ==================== */
 body {
   font-family: Arial, sans-serif;
   overflow-x: hidden;
@@ -32,6 +34,13 @@ body {
   font-style: italic;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==================== */
+/* Navigace (Navbar) */
+/* ==================== */
 .navbar {
   background: linear-gradient(45deg, #0d9f89, #14b4dc, #8a2be2, #a3eb1d);
 }
@@ -45,19 +54,17 @@ body {
   transform: scale(1.2);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+/* ==================== */
 /* Hero sekce */
+/* ==================== */
 .hero-section {
   height: 100vh;
   background: url("ima2g/wall01.jpg") no-repeat center center/cover;
-
   color: white;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -75,39 +82,14 @@ html {
   animation: fadeIn 2s ease-in-out;
 }
 
-.name-title {
-  font-size: 2.2rem;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: bold;
-  /* transition: transform 0.3s ease-in-out; */
-}
-
-/* .name-title:hover {
-  transform: scale(1);
-} */
-
-.job-title {
-  font-size: 1.5rem;
-  background: white;
-  color: black;
-  padding: 5px 15px;
-  border-radius: 8px;
-  font-weight: bold;
-  display: inline-block;
-  animation: fadeIn 2s ease-in-out;
-}
-
+.name-title,
+.job-title,
 .welcome-text {
-  font-size: 1.5rem;
   background: rgba(0, 0, 0, 0.7);
   padding: 10px 20px;
   border-radius: 8px;
   font-weight: bold;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  margin-top: 10px;
 }
 
 .welcome-text.show {
@@ -116,14 +98,17 @@ html {
 }
 
 .profile-container {
-  position: relative;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-top: 20px;
+  text-align: center;
 }
 
 .profile-img {
-  width: 180px;
-  height: 180px;
+  max-width: 180px;
+  height: auto;
   border-radius: 50%;
   border: 6px solid white;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
@@ -204,12 +189,13 @@ html {
   color: black;
 }
 
-/* Sekce */
+/* ==================== */
+/* Sekce O mně */
+/* ==================== */
 .section {
   padding: 80px 0;
 }
 
-/* O mně obrázek */
 .image-custom {
   max-width: 80%;
   height: auto;
@@ -231,42 +217,77 @@ html {
   text-align: left;
 }
 
-/* Footer */
-.footer,
-.footers {
-  background: #212529;
-  color: white;
-  padding: 20px 0;
+/* ==================== */
+/* Sekce Skills */
+/* ==================== */
+.skills-section {
+  padding: 80px 0;
+  background: #f8f9fa;
   text-align: center;
 }
 
-.footer .social-icons,
-.footers .social-iconss {
+.skills-section .row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
-  margin-top: 10px;
+  align-items: stretch; /* Zarovná karty na stejnou výšku */
 }
 
-.footer .social-icons a,
-.footers .social-iconss a {
+.skillclass {
+  background-color: #1e1e1e;
+  color: #2feb90;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.skill-card {
+  background: #1e1e1e;
   color: white;
-  font-size: 1.5rem;
-  transition: color 0.3s;
+  padding: 25px;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
-.footer .social-icons a:hover,
-.footers .social-iconss a:hover {
+.skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.skill-card h4 {
+  font-size: 22px;
+  margin-bottom: 15px;
   color: #0ce5b2;
 }
 
-.footer .copy,
-.footers .copy {
-  margin-top: 10px;
-  font-size: 0.9rem;
+.skill-card ul {
+  list-style: none;
+  padding: 0;
 }
 
-/* Portfolio */
+.skill-card ul li {
+  font-size: 18px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.skill-card ul li i {
+  font-size: 22px;
+  color: #0ce5b2;
+  text-align: center; /* Zarovná ikonky do středu */
+}
+
+/* ==================== */
+/* Sekce Portfolio */
+/* ==================== */
 .portfolio-intro {
   font-size: 1.5rem;
   max-width: 800px;
@@ -284,7 +305,6 @@ html {
   color: rgb(54, 18, 87);
 }
 
-/* Karty projektů */
 .card,
 .small-card {
   height: 650px;
@@ -325,7 +345,7 @@ html {
   width: 100%;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .card-body {
@@ -372,14 +392,59 @@ html {
   display: inline-block;
   text-decoration: none;
   text-align: center;
-  width: 100%;
+  width: auto; /* Šířka se přizpůsobí obsahu */
+  flex: 1; /* Tlačítko zabírá dostupný prostor */
 }
 
 .btlink:hover {
   background-color: rgb(10, 40, 120);
 }
 
+.button-icons-container {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.button-git-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.git-icon {
+  background-color: #333;
+  color: white;
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.3s ease;
+}
+
+.git-icon:hover {
+  color: #f5a623;
+  background-color: #555;
+}
+
+/* Šedá neaktivní ikonka */
+.git-icon.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  background-color: #888;
+  cursor: not-allowed;
+}
+
+/* ==================== */
 /* Kontaktní sekce */
+/* ==================== */
 .contact-section {
   padding: 60px 0;
   scroll-margin-top: 100px;
@@ -448,58 +513,46 @@ html {
   color: #0ce5b2;
 }
 
-/* Skills sekce */
-.skills-section {
-  padding: 80px 0;
-  background: #f8f9fa;
-  text-align: center;
-}
-
-.skill-card {
-  background: #1e1e1e;
+/* ==================== */
+/* Footer */
+/* ==================== */
+.footer,
+.footers {
+  background: #212529;
   color: white;
-  padding: 25px;
-  border-radius: 12px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 20px 0;
   text-align: center;
+}
+
+.footer .social-icons,
+.footers .social-iconss {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  height: 100%;
+  gap: 15px;
+  margin-top: 10px;
 }
 
-.skill-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+.footer .social-icons a,
+.footers .social-iconss a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s;
 }
 
-.skill-card h4 {
-  font-size: 22px;
-  margin-bottom: 15px;
+.footer .social-icons a:hover,
+.footers .social-iconss a:hover {
   color: #0ce5b2;
 }
 
-.skill-card ul {
-  list-style: none;
-  padding: 0;
+.footer .copy,
+.footers .copy {
+  margin-top: 10px;
+  font-size: 0.9rem;
 }
 
-.skill-card ul li {
-  font-size: 18px;
-  margin: 10px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.skill-card ul li i {
-  font-size: 22px;
-  color: #0ce5b2;
-}
-
+/* ==================== */
 /* Animace */
+/* ==================== */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -511,7 +564,9 @@ html {
   }
 }
 
+/* ==================== */
 /* Mobilní verze */
+/* ==================== */
 @media (max-width: 768px) {
   .hero-section {
     padding-top: 60px;
@@ -520,7 +575,7 @@ html {
   .hello-world {
     font-size: 2rem;
     position: absolute;
-    top: 10%;
+    top: 12%;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -528,7 +583,7 @@ html {
   .name-title {
     font-size: 1.5rem;
     position: absolute;
-    top: 20%;
+    top: 28%;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
@@ -537,14 +592,14 @@ html {
   .job-title {
     font-size: 1.2rem;
     position: absolute;
-    top: 30%;
+    top: 37%;
     left: 50%;
     transform: translateX(-50%);
   }
 
   .profile-container {
     position: absolute;
-    top: 40%;
+    top: 48%;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -552,8 +607,8 @@ html {
   .welcome-text {
     font-size: 1.2rem;
     position: absolute;
-    top: 60%;
-    left: 50%;
+    top: 80%;
+    left: 40%;
     transform: translateX(-50%);
   }
 
@@ -578,9 +633,15 @@ html {
   .social-icons a:nth-child(4) {
     bottom: -60px;
   }
+
+  .skill-card {
+    margin-bottom: 20px;
+  }
 }
 
+/* ==================== */
 /* Desktopová verze */
+/* ==================== */
 @media (min-width: 769px) {
   .hero-section {
     padding-top: 100px;
