@@ -52,7 +52,8 @@ html {
 /* Hero sekce */
 .hero-section {
   height: 100vh;
-  background: url(ima2g/wall01.png)no-repeat center center/cover;
+  background: url("ima2g/wall01.jpg") no-repeat center center/cover;
+
   color: white;
   display: flex;
   align-items: center;
