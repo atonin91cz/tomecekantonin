@@ -113,7 +113,7 @@ html {
   border: 6px solid white;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease-in-out;
-  object-fit: cover;
+  object-fit: unset;
 }
 
 .profile-container:hover .profile-img {
