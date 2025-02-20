@@ -122,10 +122,10 @@ html {
 
 .social-icons {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+  width: 80%;
+  height: 80%;
+  /* top: 50%;
+  left: 50%; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -230,7 +230,7 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch; /* Zarovná karty na stejnou výšku */
+  align-items: stretch; 
 }
 
 .skillclass {
@@ -240,39 +240,50 @@ html {
   border-radius: 10px;
 }
 
-.skill-card {
-  background: #1e1e1e;
-  color: white;
-  padding: 25px;
-  border-radius: 12px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
 .skill-card:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  padding: 25px;
+  background: #1e1e1e;
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
 
 .skill-card h4 {
   font-size: 22px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  color: #0ce5b2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-card h4 i {
+  font-size: 32px;
+  margin-bottom: 5px; 
   color: #0ce5b2;
 }
 
 .skill-card ul {
   list-style: none;
   padding: 0;
+  margin-top: 10px; 
 }
 
 .skill-card ul li {
   font-size: 18px;
-  margin: 10px 0;
+  margin: 8px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -282,7 +293,18 @@ html {
 .skill-card ul li i {
   font-size: 22px;
   color: #0ce5b2;
-  text-align: center; /* Zarovná ikonky do středu */
+  text-align: center; /
+}
+
+
+.skill-card {
+  min-height: 350px; 
+}
+
+.skill-card.small {
+  min-height: 220px; 
+  height: auto; 
+  padding: 20px; 
 }
 
 /* ==================== */
@@ -303,8 +325,18 @@ html {
   font-family: "Delicious Handrawn";
   font-size: 40px;
   color: rgb(54, 18, 87);
+  margin-bottom: 30px; 
+  position: relative;
 }
 
+.portfolio-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background-color: #0ce5b2;
+  margin: 10px auto 0;
+}
 .card,
 .small-card {
   height: 650px;
@@ -392,8 +424,8 @@ html {
   display: inline-block;
   text-decoration: none;
   text-align: center;
-  width: auto; /* Šířka se přizpůsobí obsahu */
-  flex: 1; /* Tlačítko zabírá dostupný prostor */
+  width: auto; 
+  flex: 1; 
 }
 
 .btlink:hover {
@@ -434,12 +466,16 @@ html {
   background-color: #555;
 }
 
-/* Šedá neaktivní ikonka */
 .git-icon.disabled {
   pointer-events: none;
   opacity: 0.5;
   background-color: #888;
   cursor: not-allowed;
+}
+
+.card-text {
+  text-align: left; 
+  margin-bottom: 15px; 
 }
 
 /* ==================== */
@@ -572,6 +608,16 @@ html {
     padding-top: 60px;
   }
 
+  .portfolio-title {
+    font-size: 30px; 
+    margin-bottom: 20px; 
+  }
+
+  .portfolio-title::after {
+    width: 60px; 
+    height: 2px; 
+  }
+
   .hello-world {
     font-size: 2rem;
     position: absolute;
@@ -599,7 +645,7 @@ html {
 
   .profile-container {
     position: absolute;
-    top: 48%;
+    top: 52%;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -637,6 +683,11 @@ html {
   .skill-card {
     margin-bottom: 20px;
   }
+
+  .skills-section .col-lg-4, .skills-section .col-md-6 {
+    margin-bottom: 10px; 
+  }
+  
 }
 
 /* ==================== */
@@ -656,7 +707,7 @@ html {
   .name-title {
     font-size: 2.2rem;
     position: absolute;
-    top: 20%;
+    top: 17%;
     left: 50%;
     transform: translateX(-50%);
   }
