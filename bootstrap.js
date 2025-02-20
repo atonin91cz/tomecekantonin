@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
   profileContainer.addEventListener("mouseleave", function () {
     timeout = setTimeout(() => {
       socialIcons.style.opacity = "0";
-      socialIcons.style.pointerEvents = "none"; 
+      socialIcons.style.pointerEvents = "none";
     }, 1000);
   });
 });
