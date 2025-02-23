@@ -1,3 +1,33 @@
+// Přidej EmailJS SDK
+(function () {
+    emailjs.init("cy9mKYZ9dVJi5wlfT"); // Nahraď svým User ID z EmailJS
+})();
+
+// Odeslání formuláře pomocí EmailJS
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    // Získání dat z formuláře
+    const name = document.getElementById("jmeno").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("zprava").value;
+
+    // Odeslání e-mailu
+    emailjs.send("service_puo60wi", "tonicek1", {
+        from_name: name,
+        from_email: email,
+        message: message,
+    }).then(
+        function (response) {
+            alert("Zpráva byla úspěšně odeslána!");
+            document.getElementById("contactForm").reset(); // Vyčištění formuláře
+        },
+        function (error) {
+            alert("Odeslání zprávy selhalo: " + error.text);
+        }
+    );
+});
+
 // Efekt zvětšení loga
 document.addEventListener("DOMContentLoaded", function () {
   const logo = document.querySelector(".logo");
@@ -31,15 +61,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
   });
 });
-
-// Validace formuláře
-document
-  .getElementById("contactForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    alert("Formulář byl úspěšně odeslán!");
-    this.reset();
-  });
 
 // Efekt plynulého načítání formuláře
 document.addEventListener("DOMContentLoaded", () => {
