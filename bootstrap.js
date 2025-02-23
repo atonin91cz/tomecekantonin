@@ -1,16 +1,20 @@
 // Přidej EmailJS SDK
 (function () {
     emailjs.init("cy9mKYZ9dVJi5wlfT"); // Nahraď svým User ID z EmailJS
+    console.log("EmailJS inicializován.");
 })();
 
 // Odeslání formuláře pomocí EmailJS
 document.getElementById("contactForm").addEventListener("submit", function (event) {
     event.preventDefault();
+    console.log("Formulář odeslán.");
 
     // Získání dat z formuláře
     const name = document.getElementById("jmeno").value;
     const email = document.getElementById("email").value;
     const message = document.getElementById("zprava").value;
+
+    console.log("Získaná data:", { name, email, message });
 
     // Odeslání e-mailu
     emailjs.send("service_puo60wi", "tonicek1", {
@@ -19,15 +23,18 @@ document.getElementById("contactForm").addEventListener("submit", function (even
         message: message,
     }).then(
         function (response) {
+            console.log("E-mail úspěšně odeslán:", response);
             alert("Zpráva byla úspěšně odeslána!");
             document.getElementById("contactForm").reset(); // Vyčištění formuláře
         },
         function (error) {
+            console.error("Chyba při odesílání e-mailu:", error);
             alert("Odeslání zprávy selhalo: " + error.text);
         }
     );
 });
 
+// Ostatní kód (efekty, animace atd.) zůstává stejný
 // Efekt zvětšení loga
 document.addEventListener("DOMContentLoaded", function () {
   const logo = document.querySelector(".logo");
