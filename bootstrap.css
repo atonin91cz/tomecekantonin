@@ -13,6 +13,49 @@ section {
 #portfolio {
   scroll-margin-top: 40px; /* Individuální hodnota pro sekci Portfolio */
 }
+/* efekt glitch */
+.hello-world {
+  font-size: 50px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  animation: glitch 4s infinite;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: inline-block;
+  /* animation: fadeIn 2s ease-in-out; */
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap");
+
+
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+    transform: skew(0deg);
+  }
+  20% {
+    text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff;
+    transform: skew(-5deg);
+  }
+  40% {
+    text-shadow: 4px 4px #ff00ff, -4px -4px #00ffff;
+    transform: skew(5deg);
+  }
+  60% {
+    text-shadow: -4px -4px #ff00ff, 4px 4px #00ffff;
+    transform: skew(-3deg);
+  }
+  80% {
+    text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+    transform: skew(3deg);
+  }
+  100% {
+    text-shadow: 0px 0px #ff00ff, 0px 0px #00ffff;
+    transform: skew(0deg);
+  }
+}
 
 @font-face {
   font-family: "Caveat";
@@ -83,7 +126,7 @@ html {
   overflow: hidden;
 }
 
-.hello-world {
+/* .hello-world {
   font-family: "Courier New", Courier, monospace;
   font-size: 2.5rem;
   background: white;
@@ -93,7 +136,7 @@ html {
   margin-bottom: 10px;
   display: inline-block;
   animation: fadeIn 2s ease-in-out;
-}
+} */
 
 .name-title,
 .job-title,
@@ -656,10 +699,10 @@ html {
   }
 
   .hello-world {
-    font-size: 2rem;
+    font-size: 2.5rem;
     position: absolute;
-    top: 12%;
-    left: 50%;
+    top: 18%;
+    left: 11%;
     transform: translateX(-50%);
   }
 
