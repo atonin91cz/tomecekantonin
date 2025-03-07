@@ -1,40 +1,3 @@
-// Přidej EmailJS SDK
-(function () {
-    emailjs.init("cy9mKYZ9dVJi5wlfT"); // Nahraď svým User ID z EmailJS
-    console.log("EmailJS inicializován.");
-})();
-
-// Odeslání formuláře pomocí EmailJS
-document.getElementById("contactForm").addEventListener("submit", function (event) {
-    event.preventDefault();
-    console.log("Formulář odeslán.");
-
-    // Získání dat z formuláře
-    const name = document.getElementById("jmeno").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("zprava").value;
-
-    console.log("Získaná data:", { name, email, message });
-
-    // Odeslání e-mailu
-    emailjs.send("service_puo60wi", "tonicek1", {
-        from_name: name,
-        from_email: email,
-        message: message,
-    }).then(
-        function (response) {
-            console.log("E-mail úspěšně odeslán:", response);
-            alert("Zpráva byla úspěšně odeslána!");
-            document.getElementById("contactForm").reset(); // Vyčištění formuláře
-        },
-        function (error) {
-            console.error("Chyba při odesílání e-mailu:", error);
-            alert("Odeslání zprávy selhalo: " + error.text);
-        }
-    );
-});
-
-// Ostatní kód (efekty, animace atd.) zůstává stejný
 // Efekt zvětšení loga
 document.addEventListener("DOMContentLoaded", function () {
   const logo = document.querySelector(".logo");
@@ -68,6 +31,15 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
   });
 });
+
+// Validace formuláře
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    alert("Formulář byl úspěšně odeslán!");
+    this.reset();
+  });
 
 // Efekt plynulého načítání formuláře
 document.addEventListener("DOMContentLoaded", () => {
@@ -162,5 +134,49 @@ document.addEventListener("DOMContentLoaded", function () {
       socialIcons.style.opacity = "0";
       socialIcons.style.pointerEvents = "none";
     }, 1000);
+  });
+});
+
+// Efekt přechodu mezi sekcemi
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section");
+
+  function revealSections() {
+    let windowHeight = window.innerHeight;
+
+    sections.forEach((section) => {
+      let position = section.getBoundingClientRect().top;
+      if (position < windowHeight - 100) {
+        section.style.opacity = "1";
+        section.style.transform = "scale(1)";
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealSections);
+  revealSections(); // Aktivuje efekt při načtení stránky
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault(); // Zabrání výchozímu chování odkazu
+
+      const targetId = this.getAttribute("href"); // Získá cílové ID (např. "#home")
+      const offset = parseInt(this.getAttribute("data-offset")) || 100; // Získá hodnotu offsetu nebo použije výchozí 100
+
+      // Plynulý scroll na cílovou sekci s individuálním offsetem
+      document.querySelector(targetId).scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+        offsetTop: offset, // Nastaví individuální offset
+      });
+
+      // Aktualizace aktivní třídy v navigaci
+      navLinks.forEach((link) => link.classList.remove("active"));
+      this.classList.add("active");
+    });
   });
 });
